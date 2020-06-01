@@ -8,8 +8,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class Employee implements java.io.Serializable {
 
 	
-	//@GenericGenerator(name = "sequence_emp_id", strategy = "id_generation.EmployeeIdGenerator")
-	//@GeneratedValue(generator = "sequence_emp_id")
+	@GenericGenerator(name = "ran", strategy = "com.luv2code.hibernate.demo.MySequenceGenerator")
+	@GeneratedValue(generator = "ran")
 	@Id
 	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String id;

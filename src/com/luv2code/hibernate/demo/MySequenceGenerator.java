@@ -19,12 +19,12 @@ public class MySequenceGenerator implements IdentifierGenerator {
 			}
 			else
 			{
-				tableName = "InstructorDetail";
+				tableName = "Employee";
 			}
-			Long total = (Long) session.createQuery("select count(1) from Instructor").uniqueResult();
-			
+			Long total = (Long) session.createQuery("select count(1) from "+tableName).uniqueResult();
+			Long nextVal = total+1l;
 			//SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd-MM-mm-ss");
-			return "append_"+total.toString();
+			return "append_"+nextVal.toString();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
